@@ -1,0 +1,12 @@
+{
+  "name": "@repo/eslint-config",
+  "version": "0.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "eslint-config-next": "15.5.4",
+    "eslint-config-turbo": "latest"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
