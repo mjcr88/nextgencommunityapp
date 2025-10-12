@@ -4,17 +4,21 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/cache/**", "!.next/cache/**", "dist/**", "build/**"]
     },
     "lint": {
-      "cache": false
+      "outputs": []
     },
     "clean": {
       "cache": false
     },
     "type-check": {
       "dependsOn": ["^type-check"],
-      "outputs": ["**/*.ts", "**/*.tsx"]
+      "outputs": []
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/cache/**"]
     },
     "dev": {
       "cache": false,

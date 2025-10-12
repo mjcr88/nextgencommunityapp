@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "lib": ["DOM", "DOM.Iterable", "ES6"],
+    "lib": ["DOM", "DOM.Iterable", "ES6", "ES2022"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -13,16 +13,13 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@repo/shared/*": ["../packages/shared/src/*"],
-      "@repo/database/*": ["../packages/database/src/*"],
-      "@repo/ui/*": ["../packages/ui/src/*"]
+      "@repo/shared/*": ["packages/shared/dist/*"],
+      "@repo/database/*": ["packages/database/src/*"],
+      "@repo/ui/*": ["packages/ui/src/*"],
+      "@repo/config/*": ["packages/config/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
