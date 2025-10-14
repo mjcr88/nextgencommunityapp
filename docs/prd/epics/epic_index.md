@@ -1,0 +1,27 @@
+# Epics & User Stories
+
+## Table of Contents
+
+- [Epics & User Stories](#table-of-contents)
+  - [Epic 1: Project Foundation & Onboarding Gateway](./epic-1-project-foundation-onboarding-gateway.md)
+    - [Story 1.1: Monorepo & CI/CD Setup (Technical Story)](./epic-1-project-foundation-onboarding-gateway.md#story-11-monorepo-cicd-setup-technical-story)
+    - [Story 1.2: Multi-Tenant & Auth Foundation (Technical Story)](./epic-1-project-foundation-onboarding-gateway.md#story-12-multi-tenant-auth-foundation-technical-story)
+    - [Story 1.3: Admin User Creation (Flow 0)](./epic-1-project-foundation-onboarding-gateway.md#story-13-admin-user-creation-flow-0)
+    - [Story 1.4: Account Activation & Password Setup (Flow 1 Gateway)](./epic-1-project-foundation-onboarding-gateway.md#story-14-account-activation-password-setup-flow-1-gateway)
+    - [Story 1.5: External Service Credentialing (Technical Story)](./epic-1-project-foundation-onboarding-gateway.md#story-15-external-service-credentialing-technical-story)
+  - [Epic 2: Information & Awareness Hub](./epic-2-information-awareness-hub.md)
+    - [Story 2.1: Personalized Home Feed](./epic-2-information-awareness-hub.md#story-21-personalized-home-feed)
+    - [Story 2.2: AI-Powered Assistant for Community Knowledge](./epic-2-information-awareness-hub.md#story-22-ai-powered-assistant-for-community-knowledge)
+    - [Story 2.3: Admin Content Management for AI](./epic-2-information-awareness-hub.md#story-23-admin-content-management-for-ai)
+  - [Epic 3: Spatial Awareness & Connection](./epic-3-spatial-awareness-connection.md)
+    - [Story 3.1: Interactive Community Map](./epic-3-spatial-awareness-connection.md#story-31-interactive-community-map)
+    - [Story 3.2: Location-Based Check-ins](./epic-3-spatial-awareness-connection.md#story-32-location-based-check-ins)
+  - [Epic 4: Community Coordination & Resource Sharing](./epic-4-community-coordination-resource-sharing.md)
+    - [Story 4.1: Shared Calendar & Resident-Led Events](./epic-4-community-coordination-resource-sharing.md#story-41-shared-calendar-resident-led-events)
+    - [Story 4.2: Community Exchange Listings & Requests](./epic-4-community-coordination-resource-sharing.md#story-42-community-exchange-listings-requests)
+    - [Story 4.3: Service Request Submission & Tracking](./epic-4-community-coordination-resource-sharing.md#story-43-service-request-submission-tracking)
+  - [Epic 5: Platform Administration & Technical Foundation](./epic-5-platform-administration-technical-foundation.md)
+    - [Story 5.1: Admin Event Moderation](./epic-5-platform-administration-technical-foundation.md#story-51-admin-event-moderation)
+    - [Story 5.2: Admin Exchange Moderation](./epic-5-platform-administration-technical-foundation.md#story-52-admin-exchange-moderation)
+    - [Story 5.3: External Messaging API (Technical Story)](./epic-5-platform-administration-technical-foundation.md#story-53-external-messaging-api-technical-story)
+    - [Story 5.4: Multi-Tenant Architecture (Technical Story)](./epic-5-platform-administration-technical-foundation.md#story-54-multi-tenant-architecture-technical-story)
