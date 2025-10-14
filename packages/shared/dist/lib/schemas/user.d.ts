@@ -10,22 +10,22 @@ export declare const TenantSchema: z.ZodObject<{
     updated_at: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     status: "active" | "suspended" | "trial";
-    id: string;
     name: string;
     slug: string;
+    id: string;
     created_at: string;
     updated_at: string;
-    domain?: string | undefined;
     settings?: any;
+    domain?: string | undefined;
 }, {
-    id: string;
     name: string;
     slug: string;
+    id: string;
     created_at: string;
     updated_at: string;
     status?: "active" | "suspended" | "trial" | undefined;
-    domain?: string | undefined;
     settings?: any;
+    domain?: string | undefined;
 }>;
 export declare const UserSchema: z.ZodObject<{
     id: z.ZodString;
@@ -50,10 +50,10 @@ export declare const UserSchema: z.ZodObject<{
     updated_at: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     status: "active" | "pending" | "inactive";
+    tenant_id: string;
     id: string;
     created_at: string;
     updated_at: string;
-    tenant_id: string;
     email: string;
     full_name: string;
     preferred_language: "en" | "es";
@@ -70,10 +70,10 @@ export declare const UserSchema: z.ZodObject<{
     notification_preferences?: any;
     last_active_at?: string | undefined;
 }, {
+    tenant_id: string;
     id: string;
     created_at: string;
     updated_at: string;
-    tenant_id: string;
     email: string;
     full_name: string;
     status?: "active" | "pending" | "inactive" | undefined;

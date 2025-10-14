@@ -14,6 +14,82 @@ export type Database = {
   }
   public: {
     Tables: {
+      lots: {
+        Row: {
+          created_at: string | null
+          geo_bounds: Json | null
+          id: string
+          lot_number: string
+          neighborhood_id: string
+          status: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          geo_bounds?: Json | null
+          id?: string
+          lot_number: string
+          neighborhood_id: string
+          status?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          geo_bounds?: Json | null
+          id?: string
+          lot_number?: string
+          neighborhood_id?: string
+          status?: string | null
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "lots_neighborhood_id_fkey"
+            columns: ["neighborhood_id"]
+            isOneToOne: false
+            referencedRelation: "neighborhoods"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      neighborhoods: {
+        Row: {
+          created_at: string | null
+          description: string | null
+          id: string
+          name: string
+          settings: Json | null
+          tenant_id: string
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          name: string
+          settings?: Json | null
+          tenant_id: string
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          name?: string
+          settings?: Json | null
+          tenant_id?: string
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "neighborhoods_tenant_id_fkey"
+            columns: ["tenant_id"]
+            isOneToOne: false
+            referencedRelation: "tenants"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       tenants: {
         Row: {
           created_at: string | null
@@ -60,6 +136,7 @@ export type Database = {
           journey_stage: string | null
           last_active_at: string | null
           lot_assignment: string | null
+          lot_id: string | null
           notification_preferences: Json
           phone: string | null
           preferred_language: string | null
@@ -82,6 +159,7 @@ export type Database = {
           journey_stage?: string | null
           last_active_at?: string | null
           lot_assignment?: string | null
+          lot_id?: string | null
           notification_preferences?: Json
           phone?: string | null
           preferred_language?: string | null
@@ -104,6 +182,7 @@ export type Database = {
           journey_stage?: string | null
           last_active_at?: string | null
           lot_assignment?: string | null
+          lot_id?: string | null
           notification_preferences?: Json
           phone?: string | null
           preferred_language?: string | null
@@ -115,6 +194,13 @@ export type Database = {
           updated_at?: string | null
         }
         Relationships: [
+          {
+            foreignKeyName: "users_lot_id_fkey"
+            columns: ["lot_id"]
+            isOneToOne: false
+            referencedRelation: "lots"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "users_tenant_id_fkey"
             columns: ["tenant_id"]

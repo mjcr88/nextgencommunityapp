@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@repo/shared/*": ["packages/shared/dist/*"],
+      "@repo/shared/*": ["packages/shared/lib/*"],
       "@repo/database/*": ["packages/database/src/*"],
       "@repo/ui/*": ["packages/ui/src/*"],
       "@repo/config/*": ["packages/config/*"]

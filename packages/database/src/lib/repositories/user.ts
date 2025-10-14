@@ -1,17 +1,17 @@
 import { createClient } from '@supabase/supabase-js'
 import type { Database } from '../../types/supabase'
-import { InsertUserSchema, UpdateUserSchema } from '../../../../shared/lib/schemas/user'
-import { AppError } from '../../../../shared/lib/errors'
-
+import { InsertUserSchema, UpdateUserSchema } from '../../../../shared/dist/lib/schemas/user.js'
+import { AppError } from '../../../../shared/dist/lib/errors.js'
 import { z } from 'zod'
 
 type SupabaseClient = ReturnType<typeof createClient<Database>>
+type UserRow = Database['public']['Tables']['users']['Row']
 
 export async function getUserById(
   supabase: SupabaseClient,
   tenantId: string,
   userId: string
-): Promise<Database['public']['Tables']['users']['Row'] | null> {
+): Promise<UserRow | null> {
   const { data, error } = await supabase
     .from('users')
     .select('*')
@@ -20,7 +20,7 @@ export async function getUserById(
     .single()
 
   if (error) {
-    throw new AppError('Failed to fetch user', { code: 'FETCH_ERROR', cause: error })
+    throw new AppError('Failed to fetch user', 'FETCH_ERROR')
   }
 
   return data
@@ -29,7 +29,7 @@ export async function getUserById(
 export async function createUser(
   supabase: SupabaseClient,
   userData: z.infer<typeof InsertUserSchema>
-): Promise<Database['public']['Tables']['users']['Row']> {
+): Promise<UserRow> {
   const validatedData = InsertUserSchema.parse(userData)
   const { data, error } = await supabase
     .from('users')
@@ -38,7 +38,7 @@ export async function createUser(
     .single()
 
   if (error) {
-    throw new AppError('Failed to create user', { code: 'CREATE_ERROR', cause: error })
+    throw new AppError('Failed to create user', 'CREATE_ERROR')
   }
 
   return data
@@ -49,7 +49,7 @@ export async function updateUser(
   tenantId: string,
   userId: string,
   updates: z.infer<typeof UpdateUserSchema>
-): Promise<Database['public']['Tables']['users']['Row'] | null> {
+): Promise<UserRow | null> {
   const validatedUpdates = UpdateUserSchema.parse(updates)
   const { data, error } = await supabase
     .from('users')
@@ -60,7 +60,7 @@ export async function updateUser(
     .single()
 
   if (error) {
-    throw new AppError('Failed to update user', { code: 'UPDATE_ERROR', cause: error })
+    throw new AppError('Failed to update user', 'UPDATE_ERROR')
   }
 
   return data
